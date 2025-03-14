@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+  styleUrls: ['./app.component.less'],
+  imports: [RouterModule]
 })
 export class AppComponent {
-  title = 'my-task-dashboard';
+  title = 'Task Manager Dashboard';
 }

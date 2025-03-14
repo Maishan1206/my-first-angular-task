@@ -1,0 +1,85 @@
+@import '../../assets/styles/variable.less';
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: url('../../assets/backgrounds/task-list-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+   }
+   
+   .task-list-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+   
+    h2 {
+    text-align: center;
+    color: @primary-color;
+    }
+   
+    .task-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+   
+    input, select {
+    flex: 1;
+    margin: 0 5px;
+    padding: 8px;
+    border: 1px solid @border-color;
+    border-radius: 5px;
+    }
+    }
+   
+    ul {
+    list-style: none;
+    padding: 0;
+   
+    .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid hashtag#ddd;
+    transition: 0.3s ease-in-out;
+   
+    &:hover {
+    background: @secondary-color;
+    }
+   
+    .task-status {
+    font-weight: bold;
+    &.Pending { color: @warning-color; }
+    &.In-Progress { color: @primary-color; }
+    &.Completed { color: @success-color; }
+    }
+   
+    .task-actions {
+    display: flex;
+    gap: 10px;
+   
+    button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+   
+    i {
+    color: @primary-color;
+    }
+   
+    &:hover i {
+    color: @danger-color;
+    }
+    }
+    }
+    }
+    }
+   }

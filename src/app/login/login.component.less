@@ -1,0 +1,45 @@
+@import '../../assets/styles/variable.less';
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url('../../assets/backgrounds/login-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+  
+    h2 {
+      color: @primary-color;
+    }
+  
+    input {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    button {
+      background: @primary-color;
+      color: #fff;
+      width: 100%;
+      font-weight: bold;
+    }
+  
+    .error {
+      color: @danger-color;
+      font-size: 12px;
+    }
+  }
+  
+  
+  
+  

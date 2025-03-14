@@ -1,0 +1,12 @@
+<div class="login-container">
+    <div class="login-card">
+      <h2>Welcome Back</h2>
+      <form (submit)="login()">
+        <input type="text" placeholder="Enter Username" [(ngModel)]="username" name="username" required />
+        <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </div>
+  </div>
+  
