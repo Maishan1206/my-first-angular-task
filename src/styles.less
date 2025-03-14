@@ -1,0 +1,46 @@
+@import './assets/styles/variable.less';
+
+/* Global Styles */
+body {
+  font-family: @font-family;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light background as fallback */
+}
+
+button {
+  padding: @padding-small @padding-medium;
+  border: none;
+  border-radius: @border-radius;
+  font-size: @font-size;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+input, select {
+  padding: @padding-small;
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+  font-size: @font-size;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .task-list-container,
+  .task-form-container,
+  .login-container {
+    padding: 15px;
+  }
+
+  .task-controls {
+    flex-direction: column;
+
+    input, select {
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="task-list-container">
+    <h2>Task List</h2>
+  
+    <div class="task-controls">
+      <input type="text" [(ngModel)]="searchText" placeholder="Search tasks..." />
+      <select [(ngModel)]="filterStatus">
+        <option value="">All</option>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+  
+    <button (click)="addTask()">➕ Add New Task</button>
+  
+    <ul>
+      <li *ngFor="let task of filteredTasks()">
+        <div class="task-item" [ngClass]="task.status">
+          <span class="task-name">{{ task.name }}</span>
+          <span class="task-status">{{ task.status }}</span>
+          <span class="task-priority">{{ task.priority }}</span>
+  
+          <span class="task-due-date" *ngIf="task.dueDate">
+            Due: {{ task.dueDate | date:'MMM d, y' }}
+          </span>
+  
+          <div class="task-actions">
+            <button (click)="editTask(task)">
+              <i class="fas fa-edit" title="Edit Task"></i>
+            </button>
+            <button (click)="deleteTask(task.id)">
+              <i class="fas fa-trash" title="Delete Task"></i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
